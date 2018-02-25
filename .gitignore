@@ -1,3 +1,7 @@
 *.o
 src/build
 src/build/*
+html
+html/*
+latex
+latex/*
