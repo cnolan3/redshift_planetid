@@ -1,12 +1,20 @@
 file(GLOB SRCS *.cpp)
 
-add_executable(test-photo-fourier ${SRCS})
+FIND_PACKAGE( OpenMP)
+  if(OPENMP_FOUND)
+     message("OPENMP FOUND")
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS} -Ofast")
+     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
+  endif()
 
-target_link_libraries(test-photo-fourier
+add_executable(photo-fourier-test ${SRCS})
+
+target_link_libraries(photo-fourier-test
 	photo-fourier
+    utils
 	libgtest
 	libgmock
 )
 
-add_test(NAME test-photo-fourier
-		 COMMAND test-photo-fourier)
+add_test(photo-fourier-test photo-fourier-test)

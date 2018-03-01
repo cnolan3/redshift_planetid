@@ -37,6 +37,9 @@ set_target_properties(libgmock PROPERTIES
 
 # I couldn't make it work with INTERFACE_INCLUDE_DIRECTORIES
 include_directories("${source_dir}/googletest/include"
-                    "${source_dir}/googlemock/include")
+                    "${source_dir}/googlemock/include"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/photo-fourier-test"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/utils-test")
 
 add_subdirectory(photo-fourier-test)
+add_subdirectory(utils-test)
