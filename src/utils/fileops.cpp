@@ -92,6 +92,6 @@ vector<struct photoData> readNasaArchive(const char* filename) {
 
 void normalize(struct photoData &pd, double min, double max) {
     for(int i = 0; i < pd.size; i++) {
-        pd.times[i] = ((fabs(min) + fabs(max)) * ((pd.times[i] - pd.minTime) / (pd.maxTime - pd.minTime))) + min;
+        pd.times[i] = ((max - min) * ((pd.times[i] - pd.minTime) / (pd.maxTime - pd.minTime))) + min;
     }
 }
