@@ -1,5 +1,5 @@
 .. redshift_planetid documentation master file, created by
-   sphinx-quickstart on Tue Mar  6 18:37:41 2018.
+   sphinx-quickstart on Tue Mar  6 21:29:46 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
